@@ -90,12 +90,7 @@ int main() {
     return 0;
 }
 
-void saveScore(char name[], int score) {
-    FILE *fp = fopen("leaderboard.txt", "a");
-    if (fp == NULL) return;
-    fprintf(fp, "%s %d\n", name, score);
-    fclose(fp);
-}
+
 
 void displayLeaderboard() {
     struct Player players [100];
