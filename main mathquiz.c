@@ -71,3 +71,53 @@ int main() {
                 }
             }
         }
+	else if (mainMenu == 2) {
+            displayLeaderboard();
+        }
+        else if (mainMenu == 3) {
+            char sName[50];
+            printf("Enter name to search: ");
+            scanf("%s", sName);
+            searchPlayer(sName);
+        }
+        else if (mainMenu == 4) {
+            saveScore(playerName, currentScore);
+            printf("Score saved. Goodbye %s!\n", playerName);
+            keepPlaying = 0;
+        }
+    }
+
+    return 0;
+}
+
+void saveScore(char name[], int score) {
+    FILE *fp = fopen("leaderboard.txt", "a");
+    if (fp == NULL) return;
+    fprintf(fp, "%s %d\n", name, score);
+    fclose(fp);
+}
+
+void displayLeaderboard() {
+    struct Player players [100];
+    int count = 0;
+    FILE *fp = fopen("leaderboard.txt", "r");
+
+    if (fp == NULL) {
+        printf("No records found.\n");
+        return;
+    }
+
+    while (fscanf(fp, "%s %d", players[count].name, &players[count].score) != EOF) {
+        count ++;
+    }
+    fclose(fp);
+
+    for (int i = 0; i < count - 1; i++) {
+        for (int j = 0; j < count - i - 1; j++) {
+            if (players[j].score < players[j+1].score) {
+                struct Player temp = players[j];
+                players[j] = players[j+1];
+                players[j+1] = temp;
+            }
+        }
+    }
