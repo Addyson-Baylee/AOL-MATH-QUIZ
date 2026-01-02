@@ -24,7 +24,24 @@ case 2: // Level Sedang (perkalian & pembagian)
                 *a = *correctAnswer * *b;
             }
             break;
-
+case 3: // Level Sulit (campuran operasi dengan bilangan besar)
+            *a = rand() % 50 + 1;
+            *b = rand() % 50 + 1;
+            int opType = rand() % 4;
+            switch(opType) {
+                case 0: *op = '+'; *correctAnswer = *a + *b; break;
+                case 1: *op = '-'; *correctAnswer = *a - *b; break;
+                case 2: *op = '*'; *correctAnswer = *a * *b; break;
+                case 3: *op = '/'; 
+                        *correctAnswer = rand() % 10 + 1;
+                        *b = rand() % 10 + 1;
+                        *a = *correctAnswer * *b;
+                        *op = '/';
+                        break;
+            }
+            break;
+    }
+}
 
 
 
