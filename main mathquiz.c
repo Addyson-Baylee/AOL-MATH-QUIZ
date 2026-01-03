@@ -118,12 +118,12 @@ void showLeaderboard() {
     }
     fclose(file);
 	
-    for (int i = 0; i < count - 1; i++) {
-        for (int j = 0; j < count - i - 1; j++) {
-            if (players[j].score < players[j+1].score) {
-            struct Player temp = players[j];
-                players[j] = players[j+1];
-                players[j+1] = temp;    
+    for (int i = 0; i < total - 1; i++) {
+        for (int j = 0; j < total - i - 1; j++) {
+            if (records[j].points < records[j + 1].points) {
+                Player swap = records[j];
+                records[j] = records[j + 1];
+                records[j + 1] = swap;
             }
         }
     }
