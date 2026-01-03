@@ -121,7 +121,7 @@ void showLeaderboard() {
     for (int i = 0; i < total - 1; i++) {
         for (int j = 0; j < total - i - 1; j++) {
             if (records[j].points < records[j + 1].points) {
-                Player swap = records[j];
+                
                 records[j] = records[j + 1];
                 records[j + 1] = swap;
             }
