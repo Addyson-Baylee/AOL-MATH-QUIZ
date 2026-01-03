@@ -24,14 +24,14 @@ int main() {
     scanf("%s", playerName);
 
 	// menu utamanya
- while (keepPlaying) {
+ do {
         printf("\n=== Welcome to the Math Quiz ===\n");
         printf("1. Start the quiz\n");
         printf("2. View the Leaderboard\n");
         printf("3. Search for a Player\n");
         printf("4. Exit\n");
         printf("Choice: ");
-        scanf("%d", &mainMenu);
+        scanf("%d", &choice);
        
     // tingkat kesulitan nya
 	if (mainMenu == 1) {
