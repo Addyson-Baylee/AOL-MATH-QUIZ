@@ -44,8 +44,7 @@ int main() {
         scanf("%d", &mode);
 
             if (mode == 1) {min = 1; max = 20; } 
-            else if (mode == 2) {min = 21; max = 50; } 
-            else if (mode == 3) {min = 51; max = 100; }
+            
             else {printf("Invalid mode!\n"); continue; }
 
             num1 = (rand() % (max - min + 1)) + min;
