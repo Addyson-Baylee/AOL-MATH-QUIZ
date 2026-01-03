@@ -124,7 +124,7 @@ printf("\n--- LEADERBOARD ---\n");
 
 void searchPlayer(char searchName[]) {
     struct Player p;
-    
+    FILE *fp = fopen("leaderboard.txt", "r");
     int found = 0;
 
     if (fp == NULL) return;
