@@ -56,9 +56,7 @@ int main() {
             while (1) {
                 printf("What is %d %s %d? ", num1, (mode == 1 ? "+" : "x"), num2);
                 scanf("%d", &answer);
-                if (answer == correctResult) {
-                    int points = (mode == 1) ? 10 : (mode == 2 ? 20: 30);
-                    currentScore += points;
+                
                     printf("Correct! +%d points. Current Total: %d\n", points, currentScore);
                     break; // keluar dari pertanyaan ulangan
                 } else {
