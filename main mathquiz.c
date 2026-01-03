@@ -42,14 +42,25 @@ int main() {
             printf("Choice:\n");
             scanf("%d", &difficulty);
 
-            if (mode == 1) {min = 1; max = 20; } 
-            else if (mode == 2) {min = 21; max = 50; } 
-            else if (mode == 3) {min = 51; max = 100; }
-            else {printf("Invalid mode!\n"); continue; }
+            if (difficulty == 1) {
+                rangeMin = 1; rangeMax = 20;
+            } else if (difficulty == 2) {
+                rangeMin = 21; rangeMax = 50;
+            } else if (difficulty == 3) {
+                rangeMin = 51; rangeMax = 100;
+            } else {
+                printf("Invalid mode!\n");
+                continue;
+            }
 
-            num1 = (rand() % (max - min + 1)) + min;
-            num2 = (rand() % (max - min + 1)) + min;
-            correctResult = (mode == 1) ? (num1 + num2) : (num1 * num2);
+            numA = rand() % (rangeMax - rangeMin + 1) + rangeMin;
+            numB = rand() % (rangeMax - rangeMin + 1) + rangeMin;
+
+            if (difficulty == 1) {
+                correctAnswer = numA + numB;
+            } else {
+                correctAnswer = numA * numB;
+            }
 
             // kuis berulang (tetep pertanyaan ini sampai bener)
             while (1) {
