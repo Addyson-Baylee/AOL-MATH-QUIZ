@@ -115,7 +115,9 @@ void displayLeaderboard() {
     for (int i = 0; i < count - 1; i++) {
         for (int j = 0; j < count - i - 1; j++) {
             if (players[j].score < players[j+1].score) {
-                
+            struct Player temp = players[j];
+                players[j] = players[j+1];
+                players[j+1] = temp;    
             }
         }
     }
